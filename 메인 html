@@ -56,7 +56,7 @@
         <aside>
             <form name="test" onSubmit="register()" onReset="reWrite()">
                 <button onclick="logIn()">로그인</button>
-                <button onclick="resgister()">회원가입</button>
+                <button type="button" onclick="location.href='회원가입.html' ">회원가입</button>
             </form>
             <script ="text/javascript">
      function logIn() {
