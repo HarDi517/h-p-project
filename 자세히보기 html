@@ -20,7 +20,7 @@
 <body>
    <div id="wapper">
         <header>
-            <img src="image.png" width="100px" height="100px">
+           <a href="우리조메인.html"><img src="image.png" width="100px" height="100px"></a>
             <p>What's your Cuppick?</p>
         </header>
 
@@ -77,16 +77,15 @@
 
   
 
+ <!--사이드바-->
         <aside>
-
-            <form name="test" onSubmit="register()" onReset="reWrite()">
-
-                <button onclick="logIn()">로그인</button>
-
-                <button onclick="resgister()">회원가입</button>
-
+             <form action="login.html" method="post">
+                <button>로그인</button>
             </form>
-
+                <form action="회원가입.html" method="post">
+				<button>회원가입</button>
+	</form>
+  </aside>
             <script ="text/javascript">
 
      function logIn() {
