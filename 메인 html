@@ -15,22 +15,15 @@
             <img src="image.png" width="100px" height="100px">
             <p>What's your Cuppick?</p>
         </header>
-        <!--네비게이션-->
-        <nav>
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-            <li><a href="">link</a></li>
-        </nav>
+       
         <!--콘텐츠부분-->
         <section>
             <p>section</p>
             <article>
-                <p> 지역 입력:  ______________________  <a href=""> 검색 </a></p>
-                <form action="//www.html.am/html-codes/forms/html-form-tag-action.cfm" target="result" method="get">
-                    <p>몇 명이신가요?</p>
-                    <input type="checkbox" name="people" value="혼자"> 혼자
-                    <input type="checkbox" name="people" value="2인-4인"> 2인-4인
-                    <input type="checkbox" name="people" value="4인이상"> 4인이상
+                 <form action="aftersearch.html"  method="post">
+	<p>지역 : 
+	<input type="text" name="region" size="50" maxlength="10"></p>
+                    
                     <p>원하시는 조건들을 선택해주세요!</p>
                     <input type="checkbox" name="type" value="프렌차이즈"> 프렌차이즈
                     <input type="checkbox" name="type" value="개인카페"> 개인카페
@@ -46,7 +39,8 @@
                     <input type="checkbox" name="type" value="주차장">주차장
                     <input type="checkbox" name="type" value="무료 와이파이">무료 와이파이
 
-                    <p><input type="submit" value="search"></p>
+                    <p><button>검색</button></p>
+
                 </form>
 
             </article>
@@ -54,10 +48,12 @@
         </section>
         <!--사이드바-->
         <aside>
-            <form name="test" onSubmit="register()" onReset="reWrite()">
-                <button onclick="logIn()">로그인</button>
-                <button type="button" onclick="location.href='회원가입.html' ">회원가입</button>
+             <form action="login.html" method="post">
+                <button>로그인</button>
             </form>
+                <form action="회원가입.html" method="post">
+				<button>회원가입</button>
+	</form>
             <script ="text/javascript">
      function logIn() {
         var memberRegister = window.open('logIn.html', '', 'width=800, height=600');
