@@ -1,5 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+ <head>
+  <META NAME="GENERATOR" Content="Microsoft Visual Studio">
+    <meta name="description" content="This is an HTML5 example">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
+
+    <title> 커픽(CUPPICK) </title>
+    <link rel="stylesheet" href="main_css.css">
+
+</head>
+
+
 <style>
     body {
         font-family: Arial, Helvetica, sans-serif;
@@ -116,8 +127,20 @@
         }
     }
 </style>
-<body>
 
+
+
+<body>
+	<div class="wapper">
+
+	<header>
+            <a href="main.html"><img src="image.png" width="100px" height="100px"></a>
+            <p>What's your Cuppick?</p>
+            </header>
+
+
+<div id="loginer">
+<div id="form">
     <h2>회원가입</h2>
 
     <h3>사업자이신가요?</h3>
@@ -150,13 +173,14 @@
                     </label>
 
                     <div class="clearfix">
-          
+                        <button type="button" class="cancelbtn">Cancel</button>
                         <button type="submit" class="signupbtn">Sign Up</button>
                     </div>
             </div>
         </form>
     </div>
-
+</div>
+  <div id="form">
     <h3>개인 이용자이신가요?</h3>
     <button onclick="document.getElementById('id02').style.display='block'"  style="width:auto;" >개인 이용자용 회원가입</button>
     <br>
@@ -185,12 +209,13 @@
                     </label>
 
                     <div class="clearfix">
-               
+                        <button type="button" class="cancelbtn">Cancel</button>
                         <button type="submit" class="signupbtn">Sign Up</button>
                     </div>
             </div>
         </form>
-
+</div>
+</div>
 
         <script>
 // Get the modal
@@ -204,6 +229,11 @@ window.onclick = function(event) {
   }
 }
      </script>
+</div>
+       <footer>
+        <p align="center">&copy; Copyright</p>
+      </footer>
 
 </body>
+
 </html>
