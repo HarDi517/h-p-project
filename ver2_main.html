@@ -38,7 +38,7 @@
                     <p><b>원하시는 조건들을 선택해주세요!</b></p>
                     <input type="checkbox" name="type" value="프렌차이즈"> 프렌차이즈
                     <input type="checkbox" name="type" value="개인카페"> 개인카페
-	       <input type="checkbox" name="type" value="테이크아웃"> 테이크아웃
+	       
                     <p>----------------------------------------</p>
                     <input type="checkbox" name="type" value="스터디">스터디
                     <input type="checkbox" name="type" value="수다떨기"> 수다떨기
@@ -68,16 +68,30 @@
 	<article>
 	<form>
 	<p><b>[리뷰작성하기]</b></br>
-	<p>즐겨찾는 카페 :
+
+	<p>지역 : 
+	<select name="region">
+    	<option value="">지역선택</option>
+	<optgroup label="서울특별시">
+    	<optgroup label="서대문구">서대문구
+	<option value="대현동">대현동</option>
+    	<option value="신촌동">신촌동</option>
+   	 <option value="아현동">아현동</option>
+    	<option value="기타">기타</option>
+	</optgroup>
+	</optgroup>
+    	</select>          
+
+	<p>카페명:
 	
-    <select name="cafe">
-    <option value="">카페명</option>
-    <option value="스타벅스">스타벅스</option>
-    <option value="할리스">할리스</option>
-    <option value="이화다방">이화다방</option>
-    <option value="빽다방">빽다방</option>
-    <option value="기타">기타</option>
-    </select>
+    	<select name="cafe">
+  	  <option value="">카페명</option>
+   	 <option value="스타벅스">스타벅스</option>
+   	 <option value="할리스">할리스</option>
+    	<option value="이화다방">이화다방</option>
+    	<option value="빽다방">빽다방</option>
+  	  <option value="기타">기타</option>
+  	  </select>
 	<p>직접입력(기타 카페): <input type="text" name="cafe_name" size="20" value="카페명을 입력해주세요.">
             <p><textarea name="review" rows="8" cols="30"></textarea>
 
