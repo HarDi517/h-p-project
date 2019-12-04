@@ -1,3 +1,4 @@
+
 header, section, footer, aside, article, figure, figcaption, hgroup{ display: block; }
 
 body{
@@ -128,4 +129,3 @@ background-color: #b3b0ab
   display: inline-block;
 background-color: #f6f5ef
 }
-
