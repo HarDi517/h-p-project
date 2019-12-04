@@ -1,89 +1,118 @@
------------------자세히보기.html--------------------------
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-	<META NAME="GENERATOR" Content="Microsoft Visual Studio">
-	<meta name="description" content="This is an HTML5 example">
-	<meta name="keywords" content="HTML5, CSS3, JavaScript">
-	<title> 커픽(CUPPICK) </title>
-	<link rel="stylesheet" href="우리조메인.css">
+
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio">
+
+    <meta name="description" content="This is an HTML5 example">
+
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
+
+    <title> 커픽(CUPPICK) </title>
+
+    <link rel="stylesheet" href="우리조메인.css">
+
 </head>
+
 
 <body>
    <div id="wapper">
-    	<header>
-        	<img src="image.png" width="100px" height="100px">
-        	<p>What's your Cuppick?</p>
-    	</header>
- 	
-    	<nav>
-        	<li><a href="">link</a></li>
-        	<li><a href="">link</a></li>
-        	<li><a href="">link</a></li>
-    	</nav>
+        <header>
+            <img src="image.png" width="100px" height="100px">
+            <p>What's your Cuppick?</p>
+        </header>
+
+   
 
 <section>
 <article>
+
 <h1>카페이름 들어가는자리</h1>
 사장의 카페 소개 글 한줄 정도나 카페의 서비스 내용 들어가는 자리 </br></br>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ7LdIzRxMK0j8hlplQilwkzH5kjK1zHn9rBe1koLpOXfBugSV">
 </br></br>
+
  <table id="user-table2">
-        	<thead>
-            	<tr>
-  <th></th>
-  <th>사용자의 리뷰</th>
-  <th>별점</th>
-            	</tr>
-        	</thead>
-        	<tbody>
-            	<tr>
-                	<td>1</td>
-                	<td>~~~~~~~~~~~~~~~~~~~~~~~~</td>
-  <td>4/5</td>
-            	</tr>
-            	<tr>
-  <td>2</td>
-  <td>+++++++++++++++++++++++++++++</td>
-  <td>3/5</td>
-            	</tr>
-            	<tr>
-  <td>3</td>
-  <td>====================</td>
-  <td>3/5</td>
-            	</tr>
-            	<tr>
-  <td>4</td>
-  <td>/////////////////////////</td>
-  <td>5/5</td>
-            	</tr>
-           	
-        	</tbody>
-    	</table>
+            <thead>
+                <tr>
+		<th></th>
+		<th>사용자의 리뷰</th>
+		<th>별점</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>~~~~~~~~~~~~~~~~~~~~~~~~</td>
+		<td>4/5</td>
+                </tr>
+                <tr>
+		<td>2</td>
+		<td>+++++++++++++++++++++++++++++</td>
+		<td>3/5</td>
+                </tr>
+                <tr>
+		<td>3</td>
+		<td>====================</td>
+		<td>3/5</td>
+                </tr>
+                <tr>
+		<td>4</td>
+		<td>/////////////////////////</td>
+		<td>5/5</td>
+                </tr>
+               
+            </tbody>
+        </table>
+
 </article>
 </section>
+   
+
+
+
+
   
 
+        <aside>
 
- 
-    	<aside>
-        	<form name="test" onSubmit="register()" onReset="reWrite()">
-            	<button onclick="logIn()">로그인</button>
-            	<button onclick="resgister()">회원가입</button>
-        	</form>
-        	<script ="text/javascript">
- 	function logIn() {
-    	var memberRegister = window.open('logIn.html', '', 'width=800, height=600');
-  	}
- 	function register() {
-    	var memberRegister = window.open('memberRegister.html', '', 'width=800, height=600');
-  	}
-        	</script>
+            <form name="test" onSubmit="register()" onReset="reWrite()">
 
-    	</aside>
-  	
-    	<footer>footer</footer>
+                <button onclick="logIn()">로그인</button>
+
+                <button onclick="resgister()">회원가입</button>
+
+            </form>
+
+            <script ="text/javascript">
+
+     function logIn() {
+
+        var memberRegister = window.open('logIn.html', '', 'width=800, height=600');
+
+      }
+
+     function register() {
+
+        var memberRegister = window.open('memberRegister.html', '', 'width=800, height=600');
+
+      }
+
+            </script>
+
+
+        </aside>
+
+      
+
+        <footer>footer</footer>
+
 </div>
 
+
 </body>
+
 </html>
