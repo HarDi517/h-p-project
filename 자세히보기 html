@@ -20,7 +20,7 @@
 <body>
    <div class="wapper">
         <header>
-           <a href="main.html"><img src="image.png" width="100px" height="100px"></a>
+           <a href="main.html"><img src="logo.jpg" width="100px" height="100px"></a>
             <p>What's your Cuppick?</p>
         </header>
 
