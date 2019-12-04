@@ -20,7 +20,7 @@
 <body>
    <div id="wapper">
         <header>
-            <img src="image.png" width="100px" height="100px">
+            <a href="우리조메인.html"><img src="image.png" width="100px" height="100px"></a>
             <p>What's your Cuppick?</p>
         </header>
 
