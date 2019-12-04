@@ -3,10 +3,9 @@ header, section, footer, aside, article, figure, figcaption, hgroup{ display: bl
 body{
 
  text-align: center;
-
+ padding: 20px;
  color: #FFF;
 
- width: 900px;
 
 }
 
@@ -72,7 +71,6 @@ section {
 aside {
 
  background-color: white;
-
  width: 30%;
  height: 600px;
 }
@@ -114,6 +112,8 @@ article {
 #user-table2 > thead > tr { background-color: #333; color:#fff; }
 #user-table2 > thead > tr > th { padding: 8px; width: 150px; }
 #user-table2 > tbody > tr > td { background-color: #fff; border-bottom: 1px solid gray; padding:8px;  color:#333; }
+
+
 
 
 
