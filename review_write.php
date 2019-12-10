@@ -1,5 +1,5 @@
 <?php
-  header('Content-Type: text/php; charset=utf-8');
+  header('Content-Type: text/html; charset=utf-8');
   $host='39.115.75.246';
   $user='ye1';
   $password='opensw10';
@@ -20,7 +20,7 @@
     exit;
   }
 
-  $common_query_insert="INSERT INTO common (CommonID,CafeAddress, CafeName, user_UserID ) VALUES (?,?, ?, ?)";
+  $common_query_insert="INSERT INTO common (CommonID,CafeAddress, CafeName, user_UserID ) VALUES (?, ?, ?, ?)";
   $stmt3=$db->prepare($common_query_insert);
   $stmt3->bind_param('dssd', $null, $commonCafeAddress, $commonCafeName, $FK_userID);
   $stmt3->execute();
@@ -31,13 +31,13 @@
   $stmt2->store_result();
   $stmt2->bind_result($common_commonID);
   $num=0;
+
   while($id_row=$stmt2->fetch()){
-    $num=$num+1;
   }
 
   $customer_query="INSERT INTO customer (CustomerID, Score, Post, common_CommonID ) VALUES (?, ?, ?, ?)";
   $stmt1=$db->prepare($customer_query);
-  $stmt1->bind_param('ddsd', $null, $customerScore, $customerPost, $id_row[$num-1]);
+  $stmt1->bind_param('ddsd', $null, $customerScore, $customerPost, $common_commonID);
   $stmt1->execute();
 
   Header("Location:./ver2_main.php");
