@@ -1,4 +1,3 @@
-# h-p-project
 # 오픈SW플랫폼(01) Team7
 # 커픽 : 카페 리뷰 Web Appaplciation
 
