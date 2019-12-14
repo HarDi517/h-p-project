@@ -14,34 +14,39 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema test
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS 'test' DEFAULT CHARACTER SET utf8 ;
-USE 'test' ;
+CREATE SCHEMA IF NOT EXISTS `test` DEFAULT CHARACTER SET utf8 ;
+USE `test` ;
 
 -- -----------------------------------------------------
--- Table 'test'.'user'
+-- Table `test`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'test'.'user' (
-  'UserID' INT(11) UNSIGNED NOT NULL,
-  'Identify' VARCHAR(45) NOT NULL,
-  'Password' VARCHAR(45) NOT NULL,
-  PRIMARY KEY ('UserID'))
+CREATE TABLE IF NOT EXISTS `test`.`user` (
+  `UserID` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Email` VARCHAR(100) NOT NULL,
+  `Password` VARCHAR(45) NOT NULL,
+  `UserType` TINYINT(2) NOT NULL,
+  `Nickname` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`UserID`),
+  UNIQUE INDEX `Email_UNIQUE` (`Email` ASC) ,
+  UNIQUE INDEX `Nickname_UNIQUE` (`Nickname` ASC) )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table 'test'.'classfication'
+-- Table `test`.`common`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'test'.'classfication' (
-  'ClassficationID' INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  'UserID' INT(11) UNSIGNED NOT NULL,
-  'Address' VARCHAR(45) NOT NULL,
-  'Name' VARCHAR(45) NOT NULL,
-  PRIMARY KEY ('ClassficationID'),
-  INDEX 'classfication_idx' ('UserID' ASC),
-  CONSTRAINT 'fk_classfication_user1'
-    FOREIGN KEY ('UserID')
-    REFERENCES 'test'.'user' ('UserID')
+CREATE TABLE IF NOT EXISTS `test`.`common` (
+  `CommonID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `CafeAddress` VARCHAR(100) NOT NULL,
+  `CafeName` VARCHAR(45) NOT NULL,
+  `user_UserID` INT(11) UNSIGNED NOT NULL,
+  PRIMARY KEY (`CommonID`),
+  UNIQUE INDEX `CommonID_UNIQUE` (`CommonID` ASC) ,
+  INDEX `fk_common_user1_idx` (`user_UserID` ASC) ,
+  CONSTRAINT `fk_common_user1`
+    FOREIGN KEY (`user_UserID`)
+    REFERENCES `test`.`user` (`UserID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
@@ -49,20 +54,19 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table 'test'.'profile'
+-- Table `test`.`customer`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'test'.'profile' (
-  'ProfileID' INT(10) UNSIGNED NOT NULL,
-  'UserID' INT(11) UNSIGNED NOT NULL,
-  'Name' VARCHAR(45) NOT NULL,
-  'Age' INT(10) UNSIGNED NOT NULL,
-  'Address' VARCHAR(45) NOT NULL,
-  'JoinDay' DATE NOT NULL,
-  PRIMARY KEY ('ProfileID'),
-  INDEX 'fk_profile_idx' ('UserID' ASC) ,
-  CONSTRAINT 'fk_profile_user1'
-    FOREIGN KEY ('UserID')
-    REFERENCES 'test'.'user' ('UserID')
+CREATE TABLE IF NOT EXISTS `test`.`customer` (
+  `CustomerID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Score` INT(10) UNSIGNED NOT NULL,
+  `Post` VARCHAR(1000) NOT NULL,
+  `common_CommonID` INT(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`CustomerID`),
+  UNIQUE INDEX `CustomerID_UNIQUE` (`CustomerID` ASC) ,
+  INDEX `fk_customer_common1_idx` (`common_CommonID` ASC) ,
+  CONSTRAINT `fk_customer_common1`
+    FOREIGN KEY (`common_CommonID`)
+    REFERENCES `test`.`common` (`CommonID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
@@ -70,39 +74,22 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table 'test'.'review'
+-- Table `test`.`owner`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'test'.'review' (
-  'ReviewID' INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  'ClassficationID' INT(10) UNSIGNED NOT NULL,
-  'Score' INT(10) UNSIGNED NOT NULL,
-  'Post' VARCHAR(150) NOT NULL,
-  PRIMARY KEY ('ReviewID'),
-  INDEX 'fk_review_idx' ('ClassficationID' ASC) ,
-  CONSTRAINT 'fk_review_classfication1'
-    FOREIGN KEY ('ClassficationID')
-    REFERENCES 'test'.'classfication' ('ClassficationID')
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table 'test'.'tag'
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS 'test'.'tag' (
-  'TagID' INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  'ClassficationID' INT(10) UNSIGNED NOT NULL,
-  'Visitor' INT(10) UNSIGNED NOT NULL,
-  'Purpose' VARCHAR(45) NOT NULL,
-  'Type' VARCHAR(45) NOT NULL,
-  'Environment' VARCHAR(100) NOT NULL,
-  PRIMARY KEY ('TagID'),
-  INDEX 'fk_tag_idx' ('ClassficationID' ASC) ,
-  CONSTRAINT 'fk_tag_classfication1'
-    FOREIGN KEY ('ClassficationID')
-    REFERENCES 'test'.'classfication' ('ClassficationID')
+CREATE TABLE IF NOT EXISTS `test`.`owner` (
+  `OwnerID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Purpose` VARCHAR(45) NOT NULL,
+  `Plug` TINYINT(2) UNSIGNED NOT NULL,
+  `Parking` TINYINT(2) UNSIGNED NOT NULL,
+  `Toilet` TINYINT(2) UNSIGNED NOT NULL,
+  `WiFi` TINYINT(2) UNSIGNED NOT NULL,
+  `common_CommonID` INT(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`OwnerID`),
+  UNIQUE INDEX `OwnerID_UNIQUE` (`OwnerID` ASC) ,
+  INDEX `fk_owner_common1_idx` (`common_CommonID` ASC) ,
+  CONSTRAINT `fk_owner_classfication1`
+    FOREIGN KEY (`common_CommonID`)
+    REFERENCES `test`.`common` (`CommonID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
