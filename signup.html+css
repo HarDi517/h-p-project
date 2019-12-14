@@ -1,16 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
- <head>
-  <META NAME="GENERATOR" Content="Microsoft Visual Studio">
-    <meta name="description" content="This is an HTML5 example">
-    <meta name="keywords" content="HTML5, CSS3, JavaScript">
-
-    <title> 커픽(CUPPICK) </title>
-    <link rel="stylesheet" href="main_css.css">
-
-</head>
-
-
+<html>
 <style>
     body {
         font-family: Arial, Helvetica, sans-serif;
@@ -127,35 +116,20 @@
         }
     }
 </style>
-
-
-
 <body>
-	<div class="wapper">
 
-	<header>
-            <a href="main.html"><img src="logo.jpg" width="100px" height="100px"></a>
-            <p>What's your Cuppick?</p>
-            </header>
-
-
-<div id="loginer">
-<div id="form">
-    <h2>회원가입</h2>
-
-    <h3>사업자이신가요?</h3>
-    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">사업자용 회원가입</button>
+    <h2>사업자이신가요, 개인회원이신가요?</h2>
+    <form action="">
+  <input type="radio" name="" value="male"> Owner<br>
+  <input type="radio" name="customer" value="customer"> Customer<br>
+    </form>
     <br>
-    <div id="id01" class="modal">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content" action="/action_page.php">
-            <div class="container">
-                <h1>사업자용 회원가입</h1>
+
+\
+                <h1>회원가입</h1>
                 <hr>
-                <label for=""><b>가게이름</b></label>
-                <input type="text" placeholder="Enter store name" name="store name" required>
-                <label for=""><b>가게위치</b></label>
-                <input type="text" placeholder="Enter store location" name="store location" required>
+                <label for=""><b>Nickname</b></label>
+                <input type="text" placeholder="Nickname" name="nickname" required>
                 <br>
                 <p>
                     <label for=""><b>Email</b></label>
@@ -165,75 +139,23 @@
                     <label for="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required>
 
-                    <label for="psw-repeat"><b>Repeat Password</b></label>
-                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                    </label>
 
                     <div class="clearfix">
-                        <button type="button" class="cancelbtn">Cancel</button>
+
                         <button type="submit" class="signupbtn">Sign Up</button>
                     </div>
-            </div>
-        </form>
-    </div>
-</div>
-  <div id="form">
-    <h3>개인 이용자이신가요?</h3>
-    <button onclick="document.getElementById('id02').style.display='block'"  style="width:auto;" >개인 이용자용 회원가입</button>
-    <br>
-    <div id="id02" class="modal">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-        <form class="modal-content" action="action_page.php" style="border:1px solid #ccc">
-            <div class="container">
-                <h1>개인고객용 회원가입</h1>
-                <hr>
-                <label for=""><b>닉네임</b></label>
-                <input type="text" placeholder="Enter Nickname" name="store name" required>
-                <br>
-                <p>
-                    <label for=""><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" name="email" required>
-                    <br>
-                <p>
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
 
-                    <label for="psw-repeat"><b>Repeat Password</b></label>
-                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                    </label>
 
-                    <div class="clearfix">
-                        <button type="button" class="cancelbtn">Cancel</button>
-                        <button type="submit" class="signupbtn">Sign Up</button>
-                    </div>
-            </div>
-        </form>
-</div>
-</div>
 
         <script>
 // Get the modal
             var modal = document.getElementById('id01');
-            var modal = document.getElementById('id02');
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+
 }
      </script>
-</div>
-       <footer>
-        <p align="center">&copy; Copyright</p>
-      </footer>
 
 </body>
-
 </html>
