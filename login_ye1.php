@@ -1,52 +1,59 @@
 
 <html lang="en">
  <head>
-  <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus®">
-    <link rel="strylesheet" href="logIn_css.css">
+  <META NAME="GENERATOR" Content="Microsoft Visual Studio">
+    <meta name="description" content="This is an HTML5 example">
+    <meta name="keywords" content="HTML5, CSS3, JavaScript">
 
-    <style type="text/css">
-     a:link { color: black; text-decoration: none;}
-     a:visited { color: black; text-decoration: none;}
-     a:hover { color: black; text-decoration: underline;}
-    </style>
+    <title> 커픽(CUPPICK) </title>
+    <link rel="stylesheet" href="main_css.css">
+
+</head>
+
+<body>
+    <div class="wapper">
+
+	<header>
+            <a href="main.html"><img src="logo.jpg" width="100px" height="100px"></a>
+            <p>What's your Cuppick?</p>
+        </header>
+
+
   <title>LOGIN</title>
+
  </head>
+
  <body>
-  <div>
-      <ul>
-        <li><a href="ver1_main.html">메인페이지</a></li>
-      </ul>
-    </div>
+
       <!-- 로그인 폼 CSS -->
       <div id="loginer">
         <div id="form">
           <form action="login_php_ye1.php" method="post">
-              <legend>LOGIN !</legend>
-			  <p>ID:
-              <input type="text" name="id" placeholder="Enter Your ID"></p>
+            <fieldset>
+              <legend>LOGIN</legend>
+              <input type="text" name="id" placeholder="Enter Your ID">
               <br><br>
-			  <p>PW:
-              <input type="password" name="pwd1" placeholder="Enter Your Password"></p>
+              <input type="password" name="pwd1" placeholder="Enter Your Password">
               <br><br>
               <input type="submit" name="login "value="로그인">
 			  <br><br>
 			  ------------------------------------------------
               <br><br>
-              You Don't Have Your Account?
-			  <br><br>
-
+              You Don't Have Your Account?<br>
+  	<form action="회원가입.html" method="post">
+			  <button>회원가입</button>
+	</form>
+            </fieldset>
           </form>
-		  	  <form action="signup.html" method="post">
-			  	<button>회원가입</button>
-			  </form>
+		  	
         </div>
       </div>
-
+ 
       <!-- 하단 -->
-      <div id="footer">
+      <footer>
         <p align="center">&copy; Copyright</p>
-      </div>
+      </footer>
     </div>
  </body>
 </html>
+<!--그 로그인, 회원가입 이거는 나중에 데베에서 유저 아이디랑 매칭하는 부분이 필요함 그래서 같으면 로그인 되고 아니면 안되게 만들어야 됨. 이부분은 나중에...-->
