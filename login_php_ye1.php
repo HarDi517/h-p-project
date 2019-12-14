@@ -1,12 +1,11 @@
 <?php
    header('Content-Type: text/html; charset=utf-8');
    $host='39.115.75.246';
-   $user='ye1';
-   $password='opensw10';
+   $user='bobo';
+   $password='opensw1';
    $dbname='test';
    $id=$_POST['id'];
    $pw=$_POST['pwd1'];
-
    if(!$id||!$pw){
      echo '<p>You have not entered id or password.<br/>
      Please go back and try again.</p>';
@@ -24,12 +23,14 @@
    $stmt->bind_result($userUserID, $userEmail, $userPassword, $userUserType);
    $check=0;
    $method='"post"';
-
    while($id_row=$stmt->fetch()){
      if($userEmail == $id && $userPassword == $pw){
        $check=1;
        $name="myvar";
        $value=$userUserID;
+       setcookie($name,$value);
+       $name="myvar2";
+       $value=$id;
        setcookie($name,$value);
        Header("Location:./ver2_main.php");
        exit;
