@@ -119,14 +119,12 @@
 <body>
 
     <h2>사업자이신가요, 개인회원이신가요?</h2>
-    <form action="">
-  <input type="radio" name="" value="male"> Owner<br>
-  <input type="radio" name="customer" value="customer"> Customer<br>
-    </form>
-    <br>
+<form  action="signphp.php"  method="post">
+  <input type="radio" name="usertype" value="0"> Owner<br>
+  <input type="radio" name="usertype" value="1"> Customer<br>
 
-\
-                <h1>회원가입</h1>
+
+              <h1>회원가입</h1>
                 <hr>
                 <label for=""><b>Nickname</b></label>
                 <input type="text" placeholder="Nickname" name="nickname" required>
@@ -146,7 +144,7 @@
                     </div>
 
 
-
+</form>
 
         <script>
 // Get the modal
