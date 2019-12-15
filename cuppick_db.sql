@@ -34,26 +34,6 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `test`.`customer`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `test`.`customer` (
-  `CustomerID` INT(10) UNSIGNED NOT NULL,
-  `Score` INT(10) UNSIGNED NOT NULL,
-  `Post` VARCHAR(2000) NOT NULL,
-  `user_UserID` INT(10) UNSIGNED NOT NULL,
-  PRIMARY KEY (`CustomerID`),
-  UNIQUE INDEX `CustomerID_UNIQUE` (`CustomerID` ASC) ,
-  INDEX `fk_customer_user1_idx` (`user_UserID` ASC) ,
-  CONSTRAINT `fk_customer_user1`
-    FOREIGN KEY (`user_UserID`)
-    REFERENCES `test`.`user` (`UserID`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
 -- Table `test`.`owner`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `test`.`owner` (
@@ -73,6 +53,26 @@ CREATE TABLE IF NOT EXISTS `test`.`owner` (
   CONSTRAINT `fk_owner_user1`
     FOREIGN KEY (`user_UserID`)
     REFERENCES `test`.`user` (`UserID`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `test`.`customer`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `test`.`customer` (
+  `CustomerID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Score` INT(10) UNSIGNED NOT NULL,
+  `Post` VARCHAR(2000) NOT NULL,
+  `owner_OwnerID` INT(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`CustomerID`),
+  UNIQUE INDEX `CustomerID_UNIQUE` (`CustomerID` ASC) ,
+  INDEX `fk_customer_owner1_idx` (`owner_OwnerID` ASC) ,
+  CONSTRAINT `fk_customer_owner1`
+    FOREIGN KEY (`owner_OwnerID`)
+    REFERENCES `test`.`owner` (`OwnerID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
