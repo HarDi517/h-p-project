@@ -78,6 +78,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `test`.`owner` (
   `OwnerID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `CafeType` VARCHAR(45) NOT NULL,
   `Purpose` VARCHAR(45) NOT NULL,
   `Plug` TINYINT(2) UNSIGNED NOT NULL,
   `Parking` TINYINT(2) UNSIGNED NOT NULL,
