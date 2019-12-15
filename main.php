@@ -65,7 +65,7 @@
              <form action="login_ye1.php" method="post">
                 <button>로그인</button>
             </form>
-                <form action="회원가입.html" method="post">
+                <form action="new_signup.php" method="post">
 				<button>회원가입</button>
 	</form>
             
