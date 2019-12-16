@@ -43,7 +43,7 @@
      $stmt->execute();
      $stmt->store_result();
     $stmt->bind_result($cafeType,$cafeName,$cafePurpose, $cafePlug, $cafeToilet,$cafeParking, $cafeWiFi);
-  ?>
+    ?>
 
 
 	<section>
@@ -60,16 +60,19 @@
             <tbody>
 
 
-    <?php  while($stmt->fetch()){  ?>
-                <tr>
-		<td>2</td>
-		<td><?php echo $cafeName; ?></td>
-	<td><?php echo $cafeType; ?></td>
+              <?php
+              $rank=0;
+              while($stmt->fetch()){  ?>
+                            <tr>
+              <?php  $rank=$rank+1; ?>
+            		<td><?php echo $rank; ?></td>
+            		<td><?php echo $cafeName; ?></td>
+            	<td><?php echo $cafeType; ?></td>
 
-		<td><button type="button" onclick="location.href='자세히보기2.html' ">자세히보기</button></td>
-                </tr>
-                <tr>
-<?php    }  ?>
+            		<td><button type="button" onclick="location.href='자세히보기2.php' ">자세히보기</button></td>
+                            </tr>
+                            <tr>
+            <?php    }  ?>
 
 
 
@@ -86,10 +89,19 @@
 
     <!--사이드바-->
         <aside>
-			<p>유저아이디 들어가는 자리</p>
-            <form action="main.html" method="post">
+	안녕하세요! [
+	<?php
+		$userEmail=$_COOKIE["myvar2"];
+		echo $userEmail;
+	?> ] 님</p>
+
+            <form action="main.php" method="post">
                 <button>로그아웃</button>
             </form>
+	<form action="customer_info.php" method="post">
+                <button>회원정보수정</button>
+            </form>
+
         </aside>
 
             <script ="text/javascript">
