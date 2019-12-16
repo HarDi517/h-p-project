@@ -18,7 +18,6 @@
     Please try agin later.</p>';
     exit;
   }
-
   $owner_query="SELECT CafeName, OwnerID FROM owner";
   $stmt2=$db->prepare($owner_query);
   $stmt2->execute();
@@ -29,7 +28,6 @@
       $cafename_by_ownerID=$owner_OwnerID;
     }
   }
-
   $customer_query="INSERT INTO customer (CustomerID, Score, Post, owner_OwnerID ) VALUES (?, ?, ?, ?)";
   $stmt1=$db->prepare($customer_query);
   $stmt1->bind_param('ddsd', $null, $customerScore, $customerPost, $cafename_by_ownerID);
