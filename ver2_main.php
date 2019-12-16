@@ -18,7 +18,7 @@
             <article>
 
 
-                <form action="aftersearch2.php" method="get">
+                <form action="aftersearch2.php"  method="post">
 	<p>지역 :
 	<select name="region">
     	<option value="">지역선택</option>
@@ -31,7 +31,7 @@
 	</optgroup>
 	</optgroup>
     	</select>
-
+                    
 
                     <p><b>원하시는 조건들을 선택해주세요!</b></p>
                     [카페 타입]</br>
@@ -40,25 +40,25 @@
                     <p>
                       [카페 목적]</br>
                       <input type="radio" name="purpose" value="study">스터디
-
+                   
                       <input type="radio" name="purpose" value="chat"> 수다떨기
                       <br><br>
                       <p>
 	         [카페 서비스]</br>
                       <콘센트></br>
-                      <input type="radio" name="plug" value="1"> 있음
+                      <input type="radio" name="plug" value="1"> 있음 
                       <input type="radio" name="plug" value="0"> 없음 <br>
                       <p>
                       <주차가능></br>
-                      <input type="radio" name="parking" value="1"> 가능
+                      <input type="radio" name="parking" value="1"> 가능 
                       <input type="radio" name="parking" value="0"> 불가능 <br>
                       <p>
                       <와이파이></br>
-                      <input type="radio" name="wifi" value="1"> 있음
+                      <input type="radio" name="wifi" value="1"> 있음 
                       <input type="radio" name="wifi" value="0"> 없음 <br>
                       <p>
-                      <카페 내부 화장실>
-                      <input type="radio" name="toilet" value="1"> 있음
+                      <카페 내부 화장실></br>
+                      <input type="radio" name="toilet" value="1"> 있음 
                       <input type="radio" name="toilet" value="0"> 없음 <br>
                     <p><button>검색</button></p>
 	   </form>
@@ -67,6 +67,8 @@
 
             </article>
         </section>
+
+
         <!--사이드바-->
         <aside><p>
 	안녕하세요! [
@@ -79,10 +81,9 @@
                 <button>로그아웃</button>
             </form>
 
-	     <form action="checkuser.php" method="post">
+	<form action="customer_info.php" method="post">
                 <button>회원정보수정</button>
             </form>
-
 
         <div class="wapper">
 	<article>
@@ -104,13 +105,17 @@
     	<select name="cafe">
   	  <option value="">카페명</option>
    	 <option value="starbucks">스타벅스</option>
-   	 <option value="Hollys">할리스</option>
-    	<option value="Ewhadabang">이화다방</option>
-    	<option value="bbaekdabang">빽다방</option>
+   	 <option value="bbaekdabang">빽다방</option>
+    	<option value="CAPHE COZY">카페코지</option>
+    	<option value="Hollys Coffee">할리스</option>
+	<option value="Cafe Pera">카페페라</option>
+	<option value="Tiangpang Afternoon Tea">Tiangpang Afternoon Tea</option>
+	<option value="Serendipity">Serendipity</option>
+	<option value="BIGPOUND COFFEE">BIGPOUND COFFEE</option>
+	<option value="PALGONG TEA">팔공티</option>
 
   	  </select>
-	<p>직접입력(기타 카페): <input type="text" name="cafe_name"
-    size="20" value="카페명을 입력해주세요."></p>
+	
 	<p>별점:
   	 <select name="star">
     	<option value="">별점</option>
@@ -132,3 +137,4 @@
         <footer>   </footer>
     </div>
 </body>
+</html>
