@@ -13,11 +13,7 @@
 비밀번호
 <input type="text" name="password">
 <p>
-
  <input type="submit" value="modify">
 </form>
-
-
-
 </body>
 </html>
