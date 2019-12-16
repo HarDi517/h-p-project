@@ -35,12 +35,18 @@
        $name="myvar10";
        $value= $userUserType;
        setcookie($name,$value);
-       
-       Header("Location:./ver2_main.php");
        exit;
      }
    }
    if($check==0) {
      Header("Location:./login_ye1.php");
    }
+  if($userUserType==0){
+    Header("Location:./customer_info.php");
+  }
+  else{
+    Header("Location:./ver2_main.php");
+  }
+
 ?>
+
