@@ -78,6 +78,12 @@
             <form action="main.php" method="post">
                 <button>로그아웃</button>
             </form>
+		
+	     <form action="checkuser.php" method="post">
+                <button>회원정보수정</button>
+            </form>
+		
+		
         <div class="wapper">
 	<article>
 	<form action="review_write.php" method="post">
