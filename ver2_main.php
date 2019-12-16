@@ -16,7 +16,9 @@
         <!--콘텐츠부분-->
         <section>
             <article>
-                <form action="aftersearch2.html" method="get">
+
+
+                <form action="aftersearch2.php" method="get">
 	<p>지역 :
 	<select name="region">
     	<option value="">지역선택</option>
@@ -25,34 +27,54 @@
 	<option value="Daehyeon-dong">대현동</option>
     	<option value="Shinchon-dong">신촌동</option>
    	 <option value="Ahyeon-dong">아현동</option>
-    	
+
 	</optgroup>
 	</optgroup>
     	</select>
+                    
+
                     <p><b>원하시는 조건들을 선택해주세요!</b></p>
-                    <input type="checkbox" name="type" value="Franchise"> 프렌차이즈
-                    <input type="checkbox" name="type" value="Individual"> 개인카페
-                    <p>----------------------------------------</p>
-                    <input type="checkbox" name="type" value="Study">스터디
-                    <input type="checkbox" name="type" value="Chatter"> 수다떨기
-                    <p>-----------------------------------------</p>
-                    <input type="checkbox" name="type" value="Concent">콘센트
-                    <input type="checkbox" name="type" value="Toilet">카페 내부에 화장실
-                    <p></p>
-                    <input type="checkbox" name="type" value="Light">밝은조명
-                    <input type="checkbox" name="type" value="Parking">주차장
-                    <input type="checkbox" name="type" value="Wifi">무료 와이파이
-                     <p><button>검색</button></p>
-                </form>
+                    [카페 타입]</br>
+                      <input type="radio" name="cafetype" value="franchise"> 프렌차이즈
+                      <input type="radio" name="cafetype" value="independent"> 개인카페 <br>
+                    <p>
+                      [카페 목적]</br>
+                      <input type="radio" name="purpose" value="study">스터디
+                   
+                      <input type="radio" name="purpose" value="chat"> 수다떨기
+                      <br><br>
+                      <p>
+	         [카페 서비스]</br>
+                      <콘센트></br>
+                      <input type="radio" name="plug" value="1"> 있음 
+                      <input type="radio" name="plug" value="0"> 없음 <br>
+                      <p>
+                      <주차가능></br>
+                      <input type="radio" name="parking" value="1"> 가능 
+                      <input type="radio" name="parking" value="0"> 불가능 <br>
+                      <p>
+                      <와이파이></br>
+                      <input type="radio" name="wifi" value="1"> 있음 
+                      <input type="radio" name="wifi" value="0"> 없음 <br>
+                      <p>
+                      <카페 내부 화장실>
+                      <input type="radio" name="toilet" value="1"> 있음 
+                      <input type="radio" name="toilet" value="0"> 없음 <br>
+                    <p><button>검색</button></p>
+	   </form>
+
+
+
             </article>
         </section>
         <!--사이드바-->
         <aside><p>
 	안녕하세요! [
-	<?php 
+	<?php
 		$userEmail=$_COOKIE["myvar2"];
 		echo $userEmail;
 	?> ] 님</p>
+
             <form action="main.php" method="post">
                 <button>로그아웃</button>
             </form>
@@ -68,7 +90,7 @@
 	<option value="Daehyeon-dong">대현동</option>
     	<option value="Shinchon-dong">신촌동</option>
    	 <option value="Ahyeon-dong">아현동</option>
-    	
+
 	</optgroup>
 	</optgroup>
     	</select>
@@ -79,7 +101,7 @@
    	 <option value="Hollys">할리스</option>
     	<option value="Ewhadabang">이화다방</option>
     	<option value="Baekdabang">빽다방</option>
-  	  
+
   	  </select>
 	<p>직접입력(기타 카페): <input type="text" name="cafe_name"
     size="20" value="카페명을 입력해주세요."></p>
