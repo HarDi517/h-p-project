@@ -3,27 +3,18 @@
   <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <meta name="description" content="This is an HTML5 example">
     <meta name="keywords" content="HTML5, CSS3, JavaScript">
-
     <title> 커픽(CUPPICK) </title>
     <link rel="stylesheet" href="main_css.css">
-
 </head>
-
 <body>
     <div class="wapper">
-
 	<header>
             <a href="main.php"><img src="logo.jpg" width="100px" height="100px"></a>
             <p>What's your Cuppick?</p>
         </header>
-
-
   <title>LOGIN</title>
-
  </head>
-
  <body>
-
       <!-- 로그인 폼 CSS -->
       <div id="loginer">
         <div id="form">
@@ -44,10 +35,8 @@
 	
             </fieldset>
           </form>
-
         </div>
       </div>
-
       <!-- 하단 -->
       <footer>
         <p align="center">&copy; Copyright</p>
