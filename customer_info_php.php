@@ -4,21 +4,16 @@ $host='39.115.75.246';
 $user='bobo';
 $password='opensw1';
 $dbname='test';
-
 $db=new mysqli($host, $user, $password, $dbname);
  if(mysqli_connect_errno()){
    echo '<p>Error: Could not connect to database.<br/> Please try agin later.</p>';
    exit;
  }
-
 $user_nickname=$_POST['nickname'];
 $user_password=$_POST['password'];
-
-
-$userid = $_COOKIE["myvar"]; 
+$userid = $_COOKIE["myvar"];
 $usertype = $_COOKIE["myvar10"];  //session=cookie
 $usercookie='';
-
 $user_count="select count(*) from user where userid= ? "; //고객이므로
 $stmt3=$db->prepare($user_count);
 $stmt3->bind_param('d',$userid);
@@ -28,11 +23,8 @@ $stmt3->bind_result($count);
 $num=0;
 while($id_row=$stmt3->fetch()){
 }
-
 echo "string   ";
-
 echo $count;
-
 if ($count == 0) {
  }
  else {
@@ -43,9 +35,9 @@ $user_query_update="UPDATE user SET nickname='$user_nickname',password='$user_pa
  $stmt3->execute();
 }
 if($usertype==1){
- Header("Location:./main.php");}
- else($usertype==0){
-   Header("Location:./owner_info.php"); 
+ Header("Location:./main.php");
+}
+else{
+  Header("Location:./owner_info.php");
  }
-
 ?>
