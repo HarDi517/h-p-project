@@ -1,4 +1,3 @@
-
 <html lang="en">
  <head>
   <META NAME="GENERATOR" Content="Microsoft Visual Studio">
@@ -14,7 +13,7 @@
     <div class="wapper">
 
 	<header>
-            <a href="main.html"><img src="logo.jpg" width="100px" height="100px"></a>
+            <a href="main.php"><img src="logo.jpg" width="100px" height="100px"></a>
             <p>What's your Cuppick?</p>
         </header>
 
@@ -38,17 +37,17 @@
               <input type="submit" name="login "value="로그인">
 			  <br><br>
 			  ------------------------------------------------
-              <br><br>
+              <br><br></form>
               You Don't Have Your Account?<br>
-  	<form action="회원가입.html" method="post">
+  	<form action="new_signup.php" method="post">
 			  <button>회원가입</button>
-	</form>
+	
             </fieldset>
           </form>
-		  	
+
         </div>
       </div>
- 
+
       <!-- 하단 -->
       <footer>
         <p align="center">&copy; Copyright</p>
