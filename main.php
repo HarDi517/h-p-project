@@ -25,7 +25,7 @@
 
             <article>
 
-                 <form action="aftersearch2.php"  method="post">
+                 <form action="aftersearch.php"  method="post">
 	<p>지역 :
 	<select name="region">
     	<option value="">지역선택</option>
