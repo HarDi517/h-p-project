@@ -5,7 +5,6 @@ $user='bobo';
 $password='opensw1';
 $dbname='test';
 
-$owner_email=$_POST['owneremail'];
 $owner_cafename=$_POST['cafename'];
 $owner_address=$_POST['cafeaddress'];
 //변수지정
@@ -22,7 +21,6 @@ $db=new mysqli($host, $user, $password, $dbname);
    echo '<p>Error: Could not connect to database.<br/> Please try agin later.</p>';
    exit;
  }
-$result=0;
 echo $owner_cafetype;
 echo $owner_purpose ;
 
@@ -30,10 +28,15 @@ echo $owner_plug;
 echo $owner_parking;
 echo $owner_toilet;
 echo $owner_wifi ;
-$userid = 7;  //session=cookie
+
+
+$userid=$_COOKIE["myvar"];//session=cookie
 // if select count(*) from owner  where userid = $user_userid;
   //   update owner set cafetype = $owner_cafetype , purpose = $
 //$user_query_insert="INSERT INTO owner (ownerid, CafeType, Purpose, Plug, Parking, Toilet, WiFi, common_CommonID) VALUES (?, ?, ?, ?, ? , ?, 1)";
+
+
+
 $user_count="select count(*) from owner where ownerid = ?";
 $stmt3=$db->prepare($user_count);
 $stmt3->bind_param('d',$userid);
@@ -77,4 +80,3 @@ $user_query_update="UPDATE owner
  $stmt3->execute();
 }
 ?>
-
