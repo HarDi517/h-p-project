@@ -31,7 +31,7 @@
 	</optgroup>
 	</optgroup>
     	</select>
-                    
+
 
                     <p><b>원하시는 조건들을 선택해주세요!</b></p>
                     [카페 타입]</br>
@@ -40,25 +40,25 @@
                     <p>
                       [카페 목적]</br>
                       <input type="radio" name="purpose" value="study">스터디
-                   
+
                       <input type="radio" name="purpose" value="chat"> 수다떨기
                       <br><br>
                       <p>
 	         [카페 서비스]</br>
                       <콘센트></br>
-                      <input type="radio" name="plug" value="1"> 있음 
+                      <input type="radio" name="plug" value="1"> 있음
                       <input type="radio" name="plug" value="0"> 없음 <br>
                       <p>
                       <주차가능></br>
-                      <input type="radio" name="parking" value="1"> 가능 
+                      <input type="radio" name="parking" value="1"> 가능
                       <input type="radio" name="parking" value="0"> 불가능 <br>
                       <p>
                       <와이파이></br>
-                      <input type="radio" name="wifi" value="1"> 있음 
+                      <input type="radio" name="wifi" value="1"> 있음
                       <input type="radio" name="wifi" value="0"> 없음 <br>
                       <p>
                       <카페 내부 화장실>
-                      <input type="radio" name="toilet" value="1"> 있음 
+                      <input type="radio" name="toilet" value="1"> 있음
                       <input type="radio" name="toilet" value="0"> 없음 <br>
                     <p><button>검색</button></p>
 	   </form>
@@ -78,12 +78,12 @@
             <form action="main.php" method="post">
                 <button>로그아웃</button>
             </form>
-		
+
 	     <form action="checkuser.php" method="post">
                 <button>회원정보수정</button>
             </form>
-		
-		
+
+
         <div class="wapper">
 	<article>
 	<form action="review_write.php" method="post">
@@ -103,10 +103,10 @@
 	<p>카페명:
     	<select name="cafe">
   	  <option value="">카페명</option>
-   	 <option value="Starbucks">스타벅스</option>
+   	 <option value="starbucks">스타벅스</option>
    	 <option value="Hollys">할리스</option>
     	<option value="Ewhadabang">이화다방</option>
-    	<option value="Baekdabang">빽다방</option>
+    	<option value="bbaekdabang">빽다방</option>
 
   	  </select>
 	<p>직접입력(기타 카페): <input type="text" name="cafe_name"
@@ -132,4 +132,3 @@
         <footer>   </footer>
     </div>
 </body>
-</html>

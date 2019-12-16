@@ -8,7 +8,7 @@
   $commonCafeName=$_POST['cafe'];
   $customerPost=$_POST['review'];
   $customerScore=$_POST['star']; //임의로 해둠
-  $null=NULL;
+  $cafename_by_ownerID;
  //이부분 지금 php변수 받았어
   $name="myvar";
   $FK_userID=(int)$_COOKIE["myvar"];
@@ -18,21 +18,21 @@
     Please try agin later.</p>';
     exit;
   }
-  $common_query_insert="INSERT INTO common (CommonID,CafeAddress, CafeName, user_UserID ) VALUES (?, ?, ?, ?)";
-  $stmt3=$db->prepare($common_query_insert);
-  $stmt3->bind_param('dssd', $null, $commonCafeAddress, $commonCafeName, $FK_userID);
-  $stmt3->execute();
-  $common_query_select="SELECT CommonID FROM common";
-  $stmt2=$db->prepare($common_query_select);
+
+  $owner_query="SELECT CafeName, OwnerID FROM owner";
+  $stmt2=$db->prepare($owner_query);
   $stmt2->execute();
   $stmt2->store_result();
-  $stmt2->bind_result($common_commonID);
-
-  while($id_row=$stmt2->fetch()){
+  $stmt2->bind_result($owner_CafeName, $owner_OwnerID);
+  while($stmt2->fetch()){
+    if(strcmp($owner_CafeName, $commonCafeName)==0){
+      $cafename_by_ownerID=$owner_OwnerID;
+    }
   }
-  $customer_query="INSERT INTO customer (CustomerID, Score, Post, common_CommonID ) VALUES (?, ?, ?, ?)";
+
+  $customer_query="INSERT INTO customer (CustomerID, Score, Post, owner_OwnerID ) VALUES (?, ?, ?, ?)";
   $stmt1=$db->prepare($customer_query);
-  $stmt1->bind_param('ddsd', $null, $customerScore, $customerPost, $common_commonID);
+  $stmt1->bind_param('ddsd', $null, $customerScore, $customerPost, $cafename_by_ownerID);
   $stmt1->execute();
   Header("Location:./ver2_main.php");
-?> 
+?>
