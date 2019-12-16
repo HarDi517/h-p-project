@@ -32,6 +32,10 @@
        $name="myvar2";
        $value=$id;
        setcookie($name,$value);
+       $name="myvar10";
+       $value= $userUserType;
+       setcookie($name,$value);
+       
        Header("Location:./ver2_main.php");
        exit;
      }
