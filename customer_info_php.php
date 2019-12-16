@@ -42,7 +42,10 @@ $user_query_update="UPDATE user SET nickname='$user_nickname',password='$user_pa
  $stmt3=$db->prepare($user_query_update);
  $stmt3->execute();
 }
-
-
+if($usertype==1){
+ Header("Location:./main.php");}
+ else($usertype==0){
+   Header("Location:./owner_info.php"); 
+ }
 
 ?>
