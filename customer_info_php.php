@@ -15,8 +15,8 @@ $user_nickname=$_POST['nickname'];
 $user_password=$_POST['password'];
 
 
-
-$userid = '7';  //session=cookie
+$userid = $_COOKIE["myvar"]; 
+$usertype = $_COOKIE["myvar10"];  //session=cookie
 $usercookie='';
 
 $user_count="select count(*) from user where userid= ? "; //고객이므로
