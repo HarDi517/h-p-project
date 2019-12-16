@@ -23,58 +23,34 @@
      $user='bobo';
      $password='opensw1';
      $dbname='test';
+     $wherecondition = "where";
 
-	   $type1=isset($_POST['type1']) ? 1 : 0;
+     $cafeType=isset($_POST['cafetype']) ? $_POST['cafetype'] : 'independent';
+     $cafePurpose=isset($_POST['purpose']) ? $_POST['purpose'] : 'chat';
 
-     $purpose1=isset($_POST['purpose1']) ? "스터디" : "수다떨기";
-
-     $service1=isset($_POST['service1']) ? 1 : 0;
-     $service2=isset($_POST['service2']) ? 1 : 0;
-     $service3=isset($_POST['service3']) ? 1 : 0;
-     $service4=isset($_POST['service4']) ? 1 : 0;
-
-
-
+     $cafePlug=isset($_POST['plug']) ? $_POST['plug'] : 0;
+     $cafeToilet=isset($_POST['toilet']) ? $_POST['toilet'] : 0;
+     $cafeParking=isset($_POST['parking']) ? $_POST['parking'] : 0;
+     $cafeWiFi=isset($_POST['wifi']) ? $_POST['wifi'] : 0;
      $db=new mysqli($host, $user, $password, $dbname);
+     $cafeName='';
      if(mysqli_connect_errno()){
        echo '<p>Error: Could not connect to database.<br/> Please try agin later.</p>';
        exit;
      }
-     $caffe_query="SELECT CafeType, Purpose, Plug, Toilet, Parking, WiFi FROM owner";
+
+
+    $cafe_query="SELECT CafeType, cafename, Purpose, Plug, Toilet, Parking, WiFi FROM owner
+     where  cafetype = ? and purpose = ? and plug = ? and toilet = ? and parking = ? and wifi = ?";
+
      $stmt=$db->prepare($cafe_query);
+     $stmt->bind_param('ssdddd',$cafeType,$cafePurpose, $cafePlug, $cafeToilet,$cafeParking, $cafeWiFi);
+
      $stmt->execute();
      $stmt->store_result();
-     $stmt->bind_result($cafeType, $cafePurpose, $cafePlug, $cafeToilet,$cafeParking, $cafeWiFi);
-     $check=0;
-     $method='"post"';
-
-     $common_query_select="SELECT CommonID FROM common";
-     $stmt2=$db->prepare($common_query_select);
-     $stmt2->execute();
-     $stmt2->store_result();
-     $stmt2->bind_result($common_commonID);
+    $stmt->bind_result($cafeType,$cafeName,$cafePurpose, $cafePlug, $cafeToilet,$cafeParking, $cafeWiFi);
 
 
-     while($cafe_row=$stmt2->fetch()){
-       $answercafe_name="SELECT CafeName from common WHERE ($cafeType==$type1) AND ($cafePurpose==$purpose) AND ($cafePlug==$service1)
-       AND ($cafeToilet==$service2) AND ($cafeParking==$service3) AND ($cafeWiFI==$service4)";
-       echo '<tr><td>' . $cafe_row[CafeName] .
-
-       if( $cafeType==$radio1  && $cafePurpose == ) {
-         $check=1;
-         $name="myvar";
-         $value=$userUserID;
-         setcookie($name,$value);
-         $name="myvar2";
-         $value=$id;
-         setcookie($name,$value);
-         Header("Location:./ver2_main.php");
-         exit;
-    }
-  }
-  if($check==0) {
-    Header("Location:./login_ye1.php");
-  }
   ?>
 
 
@@ -90,31 +66,22 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>스타벅스 (신촌점)</td>
-                    <td>4.5/5</td>
-                    <td><button type="button" onclick="location.href='자세히보기2.html' ">자세히보기</button></td>
 
-                </tr>
+
+    <?php  while($stmt->fetch()){  ?>
                 <tr>
 		<td>2</td>
-		<td>이화다방</td>
-		<td>4.3/5</td>
+		<td><?php echo $cafeName; ?></td>
+	<td><?php echo $cafeType; ?></td>
+
 		<td><button type="button" onclick="location.href='자세히보기2.html' ">자세히보기</button></td>
                 </tr>
                 <tr>
-		<td>3</td>
-		<td>할리스</td>
-		<td>3.9/5</td>
-		<td><button type="button" onclick="location.href='자세히보기2.html' ">자세히보기</button></td>
-                </tr>
-                <tr>
-		<td>4</td>
-		<td>빽다방</td>
-		<td>4.1/5</td>
-		<td><button type="button" onclick="location.href='자세히보기2.html' ">자세히보기</button></td>
-                </tr>
+<?php    }  ?>
+
+
+
+
 
             </tbody>
         </table>
@@ -134,19 +101,12 @@
         </aside>
 
             <script ="text/javascript">
-
      function logIn() {
-
         var memberRegister = window.open('logIn.html', '', 'width=800, height=600');
-
       }
-
      function register() {
-
         var memberRegister = window.open('memberRegister.html', '', 'width=800, height=600');
-
       }
-
             </script>
 
 
