@@ -14,7 +14,7 @@
 <body>
    <div class="wapper">
         <header>
-            <a href="ver2_main.html"><img src="logo.jpg" width="100px" height="100px"></a>
+            <a href="ver2_main.php"><img src="logo.jpg" width="100px" height="100px"></a>
             <p>What's your Cuppick?</p>
         </header>
 
@@ -24,10 +24,8 @@
      $password='opensw1';
      $dbname='test';
      $wherecondition = "where";
-
      $cafeType=isset($_POST['cafetype']) ? $_POST['cafetype'] : 'independent';
      $cafePurpose=isset($_POST['purpose']) ? $_POST['purpose'] : 'chat';
-
      $cafePlug=isset($_POST['plug']) ? $_POST['plug'] : 0;
      $cafeToilet=isset($_POST['toilet']) ? $_POST['toilet'] : 0;
      $cafeParking=isset($_POST['parking']) ? $_POST['parking'] : 0;
@@ -38,19 +36,13 @@
        echo '<p>Error: Could not connect to database.<br/> Please try agin later.</p>';
        exit;
      }
-
-
     $cafe_query="SELECT CafeType, cafename, Purpose, Plug, Toilet, Parking, WiFi FROM owner
      where  cafetype = ? and purpose = ? and plug = ? and toilet = ? and parking = ? and wifi = ?";
-
      $stmt=$db->prepare($cafe_query);
      $stmt->bind_param('ssdddd',$cafeType,$cafePurpose, $cafePlug, $cafeToilet,$cafeParking, $cafeWiFi);
-
      $stmt->execute();
      $stmt->store_result();
     $stmt->bind_result($cafeType,$cafeName,$cafePurpose, $cafePlug, $cafeToilet,$cafeParking, $cafeWiFi);
-
-
   ?>
 
 
