@@ -1,3 +1,4 @@
+
 <head>
     <META NAME="GENERATOR" Content="Microsoft Visual Studio">
     <meta name="description" content="This is an HTML5 example">
@@ -18,13 +19,14 @@
             <a href="main.php"><img src="logo.jpg" width="100px" height="100px"></a>
             <p>What's your Cuppick?</p>
         </header>
-       
+
         <!--콘텐츠부분-->
         <section>
-           
+
             <article>
-                 <form action="aftersearch.html"  method="post">
-	<p>지역 : 
+
+                 <form action="aftersearch2.php"  method="post">
+	<p>지역 :
 	<select name="region">
     	<option value="">지역선택</option>
 	<optgroup label="서울특별시">
@@ -32,33 +34,47 @@
 	<option value="Daehyeon-dong">대현동</option>
     	<option value="Shinchon-dong">신촌동</option>
    	 <option value="Ahyeon-dong">아현동</option>
-    	
+
 	</optgroup>
 	</optgroup>
-    	</select>                    
+    	</select>
 
 
                     <p><b>원하시는 조건들을 선택해주세요!</b></p>
-                    <input type="checkbox" name="type" value="Franchise"> 프렌차이즈
-                    <input type="checkbox" name="type" value="Individual"> 개인카페
-                    <p>----------------------------------------</p>
-                    <input type="checkbox" name="type" value="Study">스터디
-                    <input type="checkbox" name="type" value="Chatter"> 수다떨기
-                    
-                    <p>-----------------------------------------</p>
-                    <input type="checkbox" name="type" value="Concent">콘센트
-                    <input type="checkbox" name="type" value="Toilet">카페 내부에 화장실
-                    <p></p>
-                    <input type="checkbox" name="type" value="Light">밝은조명
-                    <input type="checkbox" name="type" value="Parking">주차장
-                    <input type="checkbox" name="type" value="Wifi">무료 와이파이
+                    페 타입
+                      <input type="radio" name="cafetype" value="franchise"> 프렌차이즈 <br>
+                      <input type="radio" name="cafetype" value="independent"> 개인카페 <br>
+                    <p>
+                      카페 목적
+                      <input type="radio" name="purpose" value="study">스터디
+                      <br>
+                      <input type="radio" name="purpose" value="chat"> 수다떨기
+                      <br><br>
+
+                      <p>
+                      콘센트
+                      <input type="radio" name="plug" value="1"> 있음 <br>
+                      <input type="radio" name="plug" value="0"> 없음 <br>
+                      <p>
+                      주차가능
+                      <input type="radio" name="parking" value="1"> 가능 <br>
+                      <input type="radio" name="parking" value="0"> 불가능 <br>
+                      <p>
+                      와이파이
+                      <input type="radio" name="wifi" value="1"> 있음 <br>
+                      <input type="radio" name="wifi" value="0"> 없음 <br>
+                      <p>
+                      카페 내부 화장실
+                      <input type="radio" name="toilet" value="1"> 있음 <br>
+                      <input type="radio" name="toilet" value="0"> 없음 <br>
+
 
                     <p><button>검색</button></p>
 
                 </form>
 
             </article>
-            
+
         </section>
         <!--사이드바-->
         <aside>
@@ -68,9 +84,9 @@
                 <form action="new_signup.php" method="post">
 				<button>회원가입</button>
 	</form>
-            
-	
-   
+
+
+
 
         </aside>
         <!--풋터-->
