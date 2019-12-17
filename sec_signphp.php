@@ -12,7 +12,7 @@ $user_pw=$_POST['psw'];
 //암호화
 $sec_pw=password_hash($user_pw, PASSWORD_DEFAULT);
 
-echo "$sec_pw";
+//echo "$sec_pw";
 
 $db=new mysqli($host, $user, $password, $dbname);
  if(mysqli_connect_errno()){
@@ -25,6 +25,6 @@ $db=new mysqli($host, $user, $password, $dbname);
    $stmt3->execute();
    //여기까지가 값을 넣기
 
-//Header("Location:./login_ye1.php");
+Header("Location:./login_ye1.php");
 //에러메세지 출력
 ?>
