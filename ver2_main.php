@@ -31,7 +31,7 @@
 	</optgroup>
 	</optgroup>
     	</select>
-                    
+
 
                     <p><b>원하시는 조건들을 선택해주세요!</b></p>
                     [카페 타입]</br>
@@ -40,25 +40,25 @@
                     <p>
                       [카페 목적]</br>
                       <input type="radio" name="purpose" value="study">스터디
-                   
+
                       <input type="radio" name="purpose" value="chat"> 수다떨기
                       <br><br>
                       <p>
 	         [카페 서비스]</br>
                       <콘센트></br>
-                      <input type="radio" name="plug" value="1"> 있음 
+                      <input type="radio" name="plug" value="1"> 있음
                       <input type="radio" name="plug" value="0"> 없음 <br>
                       <p>
                       <주차가능></br>
-                      <input type="radio" name="parking" value="1"> 가능 
+                      <input type="radio" name="parking" value="1"> 가능
                       <input type="radio" name="parking" value="0"> 불가능 <br>
                       <p>
                       <와이파이></br>
-                      <input type="radio" name="wifi" value="1"> 있음 
+                      <input type="radio" name="wifi" value="1"> 있음
                       <input type="radio" name="wifi" value="0"> 없음 <br>
                       <p>
                       <카페 내부 화장실></br>
-                      <input type="radio" name="toilet" value="1"> 있음 
+                      <input type="radio" name="toilet" value="1"> 있음
                       <input type="radio" name="toilet" value="0"> 없음 <br>
                     <p><button>검색</button></p>
 	   </form>
@@ -83,6 +83,9 @@
 
 	<form action="customer_info.php" method="post">
                 <button>회원정보수정</button>
+            </form>
+            <form action="showowner.php" method="post">
+                            <button>사업자용 리뷰보기</button>
             </form>
 
         <div class="wapper">
@@ -115,7 +118,7 @@
 	<option value="PALGONG TEA">팔공티</option>
 
   	  </select>
-	
+
 	<p>별점:
   	 <select name="star">
     	<option value="">별점</option>
