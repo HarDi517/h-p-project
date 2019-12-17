@@ -24,16 +24,15 @@
             <p>What's your Cuppick?</p>
         </header>
 
+
 <?php
      $host='39.115.75.246';
      $user='bobo';
      $password='opensw1';
      $dbname='test';
-
-
      $cafeName=$_COOKIE["myvar3"];
      $OwnerID=$_COOKIE["myvar4"];
-     
+
      $cafeAddress='';
      $cafeType='';
      $cafePurpose='';
@@ -41,32 +40,28 @@
      $cafeParking='';
      $cafeToilet='';
      $cafeWiFi='';
-
      $cafeScore='';
      $cafePost='';
      $cafeOwnerID='';
-
      $db=new mysqli($host, $user, $password, $dbname);
-
      if(mysqli_connect_errno()){
        echo '<p>Error: Could not connect to database.<br/> Please try agin later.</p>';
        exit;
      }
-
-  /*  $select_cafe_query="SELECT OwnerID, CafeName, CafeAddress, CafeType, Purpose, Plug, Parking, Toilet, WiFi FROM owner WHERE cafeName = ?";
+  /* $select_cafe_query="SELECT OwnerID, CafeName, CafeAddress, CafeType, Purpose, Plug, Parking, Toilet, WiFi FROM owner WHERE cafeName = ?";
      $stmt5=$db->prepare($select_cafe_query);
      $stmt5->bind_param('s',$cafeName);
      $stmt5->execute();
      $stmt5->store_result();
-    $stmt5->bind_result($cafeOwnerID, $cafeName, $cafeAddress, $cafeType, $cafePurpose, $cafePlug, $cafeParking, $cafeToilet, $cafeWiFi);
+     $stmt5->bind_result($cafeOwnerID, $cafeName, $cafeAddress, $cafeType, $cafePurpose, $cafePlug, $cafeParking, $cafeToilet, $cafeWiFi);
 */
     $select_review_query="SELECT Score, Post FROM customer WHERE owner_OwnerID =  $OwnerID";
      $stmt6=$db->prepare($select_review_query);
-
      $stmt6->execute();
      $stmt6->store_result();
      $stmt6->bind_result($cafeScore,$cafePost);
   ?>
+
 
 
 <section>
@@ -90,7 +85,6 @@
               $sum=0;
               $count=0;
               $star=0;
-
                while($stmt6->fetch()){ ?>
 
                 <tr>
@@ -133,22 +127,18 @@
 	<form action="customer_info.php" method="post">
                 <button>회원정보수정</button>
             </form>
+            <form action="showowner.php" method="post">
+                            <button>사업자용 리뷰보기</button>
+            </form>
 
         </aside>
             <script ="text/javascript">
-
      function logIn() {
-
         var memberRegister = window.open('logIn.html', '', 'width=800, height=600');
-
       }
-
      function register() {
-
         var memberRegister = window.open('memberRegister.html', '', 'width=800, height=600');
-
       }
-
             </script>
 
 
@@ -156,7 +146,7 @@
 
 
 
-        <footer>footer</footer>
+        <footer></footer>
 
 </div>
 
