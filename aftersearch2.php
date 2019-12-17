@@ -17,9 +17,8 @@
             <a href="ver2_main.php"><img src="logo.jpg" width="100px" height="100px"></a>
             <p>What's your Cuppick?</p>
         </header>
-
-     <?php
-     $host='39.115.75.246';
+  <?php
+      $host='39.115.75.246';
      $user='bobo';
      $password='opensw1';
      $dbname='test';
@@ -32,18 +31,20 @@
      $cafeWiFi=isset($_POST['wifi']) ? $_POST['wifi'] : 0;
      $db=new mysqli($host, $user, $password, $dbname);
      $cafeName='';
+     $OwnerID='';
+     $cafeid='';
      if(mysqli_connect_errno()){
        echo '<p>Error: Could not connect to database.<br/> Please try agin later.</p>';
        exit;
      }
-    $cafe_query="SELECT CafeType, cafename, Purpose, Plug, Toilet, Parking, WiFi FROM owner
+    $cafe_query="SELECT OwnerID, CafeType, cafename, Purpose, Plug, Toilet, Parking, WiFi FROM owner
      where  cafetype = ? and purpose = ? and plug = ? and toilet = ? and parking = ? and wifi = ?";
      $stmt=$db->prepare($cafe_query);
      $stmt->bind_param('ssdddd',$cafeType,$cafePurpose, $cafePlug, $cafeToilet,$cafeParking, $cafeWiFi);
      $stmt->execute();
      $stmt->store_result();
-    $stmt->bind_result($cafeType,$cafeName,$cafePurpose, $cafePlug, $cafeToilet,$cafeParking, $cafeWiFi);
-    ?>
+    $stmt->bind_result($OwnerID,$cafeType,$cafeName,$cafePurpose, $cafePlug, $cafeToilet,$cafeParking, $cafeWiFi);
+  ?>
 
 
 	<section>
@@ -52,7 +53,7 @@
                 <tr>
 		<th>순위</th>
 		<th>카페명</th>
-		<th>별점</th>
+		<th></th>
 		<th></th>
                 </tr>
             </thead>
@@ -61,16 +62,27 @@
 
 
               <?php
-              $rank=0;
+               $rank=0;
+
               while($stmt->fetch()){  ?>
                             <tr>
+                  <?php $value1=$cafeName;
+              	  $name1="myvar3";
+                  setcookie($name1,$value1);
+
+                       $value2=$OwnerID;
+                       $name2="myvar4";
+                      setcookie($name2,$value2);
+                      $star=$_COOKIE["myvar6"];  ?>
               <?php  $rank=$rank+1; ?>
             		<td><?php echo $rank; ?></td>
             		<td><?php echo $cafeName; ?></td>
-            	<td><?php echo $cafeType; ?></td>
+                <td><?php// echo $star; ?></td>
 
             		<td><button type="button" onclick="location.href='자세히보기2.php' ">자세히보기</button></td>
-                            </tr>
+
+
+		</tr>
                             <tr>
             <?php    }  ?>
 
@@ -101,7 +113,9 @@
 	<form action="customer_info.php" method="post">
                 <button>회원정보수정</button>
             </form>
-
+            <form action="showowner.php" method="post">
+                            <button>사업자용 리뷰보기</button>
+            </form>
         </aside>
 
             <script ="text/javascript">
@@ -118,7 +132,7 @@
 
         <!--풋터-->
 
-        <footer>footer</footer>
+        <footer></footer>
 
  </div>
 
