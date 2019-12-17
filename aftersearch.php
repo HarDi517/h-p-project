@@ -150,7 +150,7 @@
 
         <!--풋터-->
 
-        <footer>footer</footer>
+        <footer></footer>
 
  </div>
 
